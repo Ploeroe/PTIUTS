@@ -235,39 +235,41 @@ tr, th{
 }
 
 .editbutton{
-  width: 70px;
+  width: 100px;
   height: 30px;
   outline: none;
   cursor: pointer;
-  background: #FBC02D;
+  background: #747ae5;
+  color: white;
   transition: .5s;
   font-size: 17px;
   border-radius: 5px;
-  font-family: "Lato",sans-serif;
+  font-family: 'Lemon';
   margin-bottom: 5px;
 }
 
 .editbutton:hover{
-  border: #FBC02D;
+  border: #747ae5;
   color: white;
   font-size: 19px;
   transform:scale(1.1);
 }
 
 .deletebutton{
-  width: 70px;
+  width: 100px;
   height: 30px;
   outline: none;
   cursor: pointer;
-  background: rgba(209, 0, 0, 0.973);
+  background: #747ae5;
+  color: white;
   transition: .5s;
   font-size: 17px;
   border-radius: 5px;
-  font-family: "Lato",sans-serif;
+  font-family: 'Lemon';
 }
 
 .deletebutton:hover{
-  border: rgba(209, 0, 0, 0.973);
+  border: #747ae5;
   color: white;
   font-size: 19px;
   transform:scale(1.1);

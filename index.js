@@ -22,7 +22,7 @@ var nomor = 0;
                         makananCol.appendChild(document.createTextNode(this.makanan));
 
                         const editCol = document.createElement("td");
-                        editCol.innerHTML = `<button class="editbutton">EDIT</button> || <button class="deletebutton">DELETE</button>`;
+                        editCol.innerHTML = `<button onClick="productEdit(this)" class="editbutton">EDIT</button> || <button onClick="productDelete(this)" class="deletebutton">DELETE</button>`;
                         editCol.type = "submit";
                         editCol.name = "formbtn";
                         editCol.appendChild(document.createTextNode(this.edit));
@@ -53,4 +53,11 @@ var nomor = 0;
                     alert('All fields must not empty');
                 }
             }
+        }
+
+        function productDelete(td){
+            if(confirm('Hapus data ini ?')){
+                rowIndex = td.parentElement.parentElement;
+                document.getElementById("tableItem").deleteRow(rowIndex);
+            } 
         }
