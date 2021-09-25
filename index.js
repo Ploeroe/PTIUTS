@@ -55,9 +55,16 @@ var nomor = 0;
             }
         }
 
-        function productDelete(td){
+        function productDelete(r){
             if(confirm('Hapus data ini ?')){
-                rowIndex = td.parentElement.parentElement;
-                document.getElementById("tableItem").deleteRow(rowIndex);
+                var i = r.parentNode.parentNode.rowIndex;
+                document.getElementById("tableItem").deleteRow(i);
+            } 
+        }
+
+        function productEdit(r){
+            if(confirm('Hapus data ini ?')){
+                var i = r.parentNode.parentNode.rowIndex;
+                document.getElementById("tableItem").deleteRow(i);
             } 
         }
