@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Work</title>
+</head>
+    <script type="text/javascript">
+    let list =
+        `[
+            {
+                "no" : 1,
+                "makanan" : "Siomay"
+            },
+            {
+                "no" : 2,
+                "makanan" : "Batagor"
+            },
+            {
+                "no" : 3,
+                "makanan" : "Ketoprak"
+            }
+        ]`
+        // console.log(JSON.parse(list)[0].makanan)
+        </script>
+<body>
+    <p id="demo"></p>
+<script>
+    const makanan = JSON.parse(list)[0]
+    document.getElementById("demo").innerHTML = makanan.makanan
+</script>
+</body>
+</html>
