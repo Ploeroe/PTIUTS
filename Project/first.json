@@ -1,14 +1,11 @@
 [
     {
-        "no":1,
-        "makanan":"Siomay"
+        "NamaMakanan":"Siomay"
     },
     {
-        "no":2,
-        "makanan":"Samyang"
+        "NamaMakanan":"Samyang"
     },
     {
-        "no":3,
-        "makanan":"Soto mie"
+        "NamaMakanan":"Tahu"
     }
 ]

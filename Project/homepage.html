@@ -19,8 +19,8 @@
                     <table class="list col-12" id="studentlist">
                         <thead class="font-white">
                             <tr>
-                                <th>No</th>
-                                <th>Nama</th>
+                                <th>Nomor</th>
+                                <th>Makanan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -35,12 +35,11 @@
         <div class="formcontainer col-6 center">
             <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="submitform">
             
-                <label>No</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
-                <input type="text" name="no" id="no">
-                
-                <label>Nama</label>
-                <input type="text" name="makanan" id="makanan">
-                
+                    <!-- <label>Nomor</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                    <input type="text" name="Nomor" id="Nomor">
+                    -->
+                    <label>Nama Makanan</label>
+                    <input type="text" name="NamaMakanan" id="NamaMakanan">
                 
                     <input type="submit" value="Submit">
                 
@@ -50,13 +49,14 @@
         <div class="modalbox" id="modalbox">
             <div class="modalboxcontent">
                 <form onsubmit="event.preventDefault();onModalSubmit();" autocomplete="off" class="editform">
-                    
-                        <label>No</label>
-                        <input type="text" name="no" id="no">
+                        <!-- <label>Nomor</label>
+                        <input type="text" name="Nomor" id="NomorMakanan">
+                        -->
+            
+                        <label>Nomor Induk</label>
+                        <input type="text" name="NamaMakanan" id="Makanan">
 
-                        <label>Nama</label>
-                        <input type="text" name="makanan" id="makanan">
-                    
+                        
                         <input type="submit" value="Submit" class="modalbutton" onclick="modalclose();">
                 </form>
                 <span class="closemodal">X</span>
