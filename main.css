@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "Lemon";
+  src: url("/font/lemonmilk.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Louis";
+  src: url("/font/louis.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#nav {
+  transition: 0.5s;
+  padding: 3px;
+  opacity: 0.8;
+}
+.container {
+  max-width: 1300px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background: #c3c5f3;
+  background-image: url(./images/BLOB2.png);
+  background-size: cover;
+  background-position:top;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:relative;
+  text-align: center;
+  font-family: "Lemon";
+}
+.navbar {
+  position: fixed;
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+  left: 0;
+  right: 0;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+
+.navbar-brand {
+  float: left;
+}
+
+.btn {
+  background: #747ae5;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  float: right;
+  padding: 10px 15px;
+  margin-top: 12px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn:hover {
+  color: white;
+  transform: translateY(-3px);
+  transition: 0.8s;
+  background: #C3C5F3;
+}
+
+#section1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title img {
+  max-width: 90%;
+}
+
+h3{
+  color: white;
+  -webkit-text-stroke: 1px #747ae5;
+  font-size: 40px;
+  margin-top: -20px;
+  margin-bottom: 0px;
+}
+
+h1{
+    color: white;
+    -webkit-text-stroke: 1px #747ae5;
+    font-size: 50px;
+    text-align: center;
+}
+#section2{
+    padding-top: 5%;
+}
+
+#section3{
+    padding-top: 8%;
+    margin-bottom: 5rem;
+}
+.InputMenu{
+    background-color: white;
+    width: 870px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    float: left;
+    color: black;
+    font-family: Lemon;
+    font-size: 25px;
+    padding-left: 10px;
+    margin-left: 10%;
+    color:  #686868;
+}
+
+.InputMenu:focus{
+    outline: none;
+}
+
+.btnAdd{
+    background: #747ae5;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    float: right;
+    width: 150px;
+    height: 40px;
+    text-decoration: none;
+    color: white;
+    font-family: Lemon;
+    font-size: 20px;
+    border: none;
+    margin-right: 10%;
+}
+
+.btnAdd:hover {
+    color: white;
+    transform: translateY(-3px);
+    transition: 0.8s;
+    background: #C3C5F3;
+  }
+
+.btnRandom{
+    background: white;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 400px;
+    height: 40px;
+    text-decoration: none;
+    color: #747ae5;
+    font-family: Lemon;
+    font-size: 20px;
+    border: none;
+}
+
+.btnRandom:hover {
+    color: white;
+    transform: translateY(-3px);
+    transition: 0.8s;
+    background: #747ae5;
+  }
+
+.fa-angle-down:before {
+    content: "\f107";
+    color: white;
+    margin-top: 0px;
+}
+
+.fa-angle-down:hover {
+    color: #747ae5;
+    transform: translateY(-3px);
+    transition: 0.8s;
+}
+
+.fa-angle-up:before {
+    content: "\f107";
+    color: white;
+    margin-top: 30px;
+}
+
+.fa-angle-up:hover {
+    color: #747ae5;
+    transform: translateY(-3px);
+    transition: 0.8s;
+}
+
+.ListMenu{
+    margin-top: 130px;
+}
+
+table{
+    width: 75%;
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    margin: auto;
+    border:2px solid #747ae5 ;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    padding: 5px;
+    color:  #686868;    
+}
+
+tr, th{
+    border-bottom: 2px solid #747ae5;
+    padding: 3px;
+}
+
+.random{
+    width: 75%;
+    text-align: center;
+    margin: auto;
+    background-color: white;
+    border-radius: 55px;
+    padding: 10px;
+    margin-top: 5%;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+    border:2px solid #747ae5 ;
+    color:  #686868;
+
+}
+
+.isirandom{
+    list-style-type:none;
+    text-align: left;
+    margin-top: 40px;
+}
