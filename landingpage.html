@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/Javascript">
+            function mintanama() {
+                var primaryname = window.prompt("Hello, What is your name?")
+                document.getElementById("nama").innerHTML = '<a href="homepage.html">'+"Hello, "+primaryname+'</a>';
+            }
+        </script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body onload="mintanama()">
+        <div class="greeting font-white">
+            <h1 id="nama"><a href="homepage.html">Hello,</a></h1>
+        </div>
+        <div class="backgroundvideo">
+            <video autoplay muted loop class="galaxyvideo" poster="bgimg.png">
+                <source src="background.mp4" type="video/mp4">
+            </video>
+        </div>
+    </body>
+</html>
