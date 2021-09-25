@@ -233,3 +233,42 @@ tr, th{
     text-align: left;
     margin-top: 40px;
 }
+
+.editbutton{
+  width: 70px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  background: #FBC02D;
+  transition: .5s;
+  font-size: 17px;
+  border-radius: 5px;
+  font-family: "Lato",sans-serif;
+  margin-bottom: 5px;
+}
+
+.editbutton:hover{
+  border: #FBC02D;
+  color: white;
+  font-size: 19px;
+  transform:scale(1.1);
+}
+
+.deletebutton{
+  width: 70px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  background: rgba(209, 0, 0, 0.973);
+  transition: .5s;
+  font-size: 17px;
+  border-radius: 5px;
+  font-family: "Lato",sans-serif;
+}
+
+.deletebutton:hover{
+  border: rgba(209, 0, 0, 0.973);
+  color: white;
+  font-size: 19px;
+  transform:scale(1.1);
+}

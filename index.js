@@ -6,7 +6,7 @@ var nomor = 0;
                 let item = {
                     nomor:'',
                     makanan: '',
-                    tombol:'',
+                    edit:'',
                     isItemValid: function(){
                         if(this.makanan !== ''){
                             return true;
@@ -20,11 +20,16 @@ var nomor = 0;
                         nomorCol.appendChild(document.createTextNode(this.nomor));
                         const makananCol = document.createElement('td');
                         makananCol.appendChild(document.createTextNode(this.makanan));
-                        const tombolCol = document.createElement('td');
-                        tombolCol.appendChild(document.createTextNode(this.tombol));
+
+                        const editCol = document.createElement("td");
+                        editCol.innerHTML = `<button class="editbutton">EDIT</button> || <button class="deletebutton">DELETE</button>`;
+                        editCol.type = "submit";
+                        editCol.name = "formbtn";
+                        editCol.appendChild(document.createTextNode(this.edit));
+
                         newRow.appendChild(nomorCol);
                         newRow.appendChild(makananCol);
-                        newRow.appendChild(tombolCol);
+                        newRow.appendChild(editCol);
                         tbody.appendChild(newRow);
                         // console.log(nomorCol);
                         // console.log(makananCol);
@@ -34,7 +39,7 @@ var nomor = 0;
                         nomor = nomor+1;
                         item.nomor = nomor;
                         item.makanan = dataSource.target['addMenu'].value;
-                        item.tombol = ;
+                        // item.edit = '';
                         // console.log(nomor);
                         // console.log(addMenu);
                     }
