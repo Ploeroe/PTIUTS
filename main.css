@@ -63,6 +63,7 @@ body {
   margin-top: 12px;
   text-decoration: none;
   color: white;
+  
 }
 
 .btn:hover {
@@ -70,6 +71,8 @@ body {
   transform: translateY(-3px);
   transition: 0.8s;
   background: #C3C5F3;
+  cursor: pointer;
+
 }
 
 #section1 {
@@ -89,7 +92,6 @@ h3{
   -webkit-text-stroke: 1px #747ae5;
   font-size: 40px;
   margin-top: -20px;
-  margin-bottom: 0px;
 }
 
 h1{
@@ -100,6 +102,7 @@ h1{
 }
 #section2{
     padding-top: 5%;
+    padding-bottom: 10%;
 }
 
 #section3{
@@ -108,17 +111,17 @@ h1{
 }
 .InputMenu{
     background-color: white;
-    width: 870px;
+    width: 77%;
     height: 40px;
     border-radius: 20px;
     border: none;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
-    float: left;
+    /* float: left; */
     color: black;
     font-family: Lemon;
-    font-size: 25px;
-    padding-left: 10px;
-    margin-left: 10%;
+    font-size: 20px;
+    padding-left: 30px;
+    /* margin-left: 10%; */
     color:  #686868;
 }
 
@@ -127,25 +130,32 @@ h1{
 }
 
 .btnAdd{
+  margin-top: 3rem;
     background: #747ae5;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    float: right;
-    width: 150px;
+    /* float: right; */
+    width: 400px;
     height: 40px;
     text-decoration: none;
     color: white;
     font-family: Lemon;
     font-size: 20px;
     border: none;
-    margin-right: 10%;
+    /* margin-right: 10%; */
 }
 
 .btnAdd:hover {
-    color: white;
+    color: #747ae5;
     transform: translateY(-3px);
     transition: 0.8s;
-    background: #C3C5F3;
+    background: white;
+  cursor: pointer;
+
+  }
+
+  .titlerandom{
+    padding-top: 3rem;
   }
 
 .btnRandom{
@@ -166,6 +176,8 @@ h1{
     transform: translateY(-3px);
     transition: 0.8s;
     background: #747ae5;
+    cursor: pointer;
+
   }
 
 .fa-angle-down:before {
@@ -193,11 +205,11 @@ h1{
 }
 
 .ListMenu{
-    margin-top: 130px;
+    margin-top: 80px;
 }
 
 table{
-    width: 75%;
+    width: 80%;
     text-align: center;
     background-color: white;
     border-radius: 30px;
@@ -214,7 +226,7 @@ tr, th{
 }
 
 .random{
-    width: 75%;
+    width: 80%;
     text-align: center;
     margin: auto;
     background-color: white;
@@ -225,6 +237,7 @@ tr, th{
     font-size: 20px;
     border:2px solid #747ae5 ;
     color:  #686868;
+    margin-bottom: 5%;
 
 }
 
@@ -242,17 +255,20 @@ tr, th{
   background: #747ae5;
   color: white;
   transition: .5s;
-  font-size: 17px;
+  font-size: 15px;
   border-radius: 5px;
   font-family: 'Lemon';
   margin-bottom: 5px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+ border: none;
+
 }
 
 .editbutton:hover{
   border: #747ae5;
   color: white;
   font-size: 19px;
-  transform:scale(1.1);
+  transform: translateY(-2px);
 }
 
 .deletebutton{
@@ -263,14 +279,141 @@ tr, th{
   background: #747ae5;
   color: white;
   transition: .5s;
-  font-size: 17px;
+  font-size: 15px;
   border-radius: 5px;
   font-family: 'Lemon';
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+ border: none;
 }
 
 .deletebutton:hover{
   border: #747ae5;
   color: white;
   font-size: 19px;
-  transform:scale(1.1);
+  transform: translateY(-2px);
+
+}
+
+/* Responsive */
+
+@media screen and (max-width: 903px) {
+  .title img{
+    max-width: 70%;
+  }
+
+  h3{
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .title img{
+    max-width: 80%;
+  }
+
+  h3{
+    font-size: 20px;
+  }
+
+  h1{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .title img{
+    max-width: 80%;
+  }
+
+  h3{
+    font-size: 15px;
+  }
+  h1{
+    font-size: 30px;
+  }
+  .btnAdd{
+    width: 200px;
+    font-size: 15px;
+  }
+  .btnRandom{
+    width: 200px;
+    font-size: 15px;
+  }
+  .InputMenu{
+    font-size: 15px;
+  }
+  table{
+    font-size: 15px;
+  }
+  .random{
+    font-size: 15px;
+  }
+  .isirandom{
+    margin-top: 20px;
+    margin-bottom: -5px;
+  }
+}
+
+
+
+
+/* CSS ABOU US */
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+}
+.grid-item h1{
+  text-align: center;
+}
+
+.grid-item img{
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  max-width: 300px;
+  border-radius: 300px;
+}
+
+.puck{
+  grid-column: 1 / span 3;
+}
+
+.joen{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.pael{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.nehe{
+  grid-column: 3;
+  grid-row: 2;
+}
+
+@media screen and (max-width: 1100px) {
+  .joen{
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+  
+  .pael{
+    grid-column: 1 / span 3;
+    grid-row: 3
+  }
+  
+  .nehe{
+    grid-column: 1 / span 3;
+    grid-row: 4;
+  }
+}
+
+@media screen and (max-width: 609px){
+  .grid-item img{
+    max-width: 200px;
+  }
 }
