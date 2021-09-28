@@ -1,0 +1,14 @@
+[
+    {
+        "nomor"  : 1,
+        "makanan": "Siomay"
+    },
+    {
+        "nomor"  : 2,
+        "makanan": "Pempek"
+    },
+    {
+        "nomor"  : 3,
+        "makanan": "Lemper"
+    }
+]

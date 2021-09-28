@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>HALO</h1>
+    <div id="menu"></div>
+    <script>
+        fetch("listmenu.json")
+            .then(response => response.json())
+            .then(
+                data => {
+                console.log(data)
+                document.querySelector("#menu").innerText = data.ListMakanan[1].makanan
+            })
+
+    </script>
+</body>
+</html>
