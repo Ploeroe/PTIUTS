@@ -1,14 +1,14 @@
 [
     {
-    "nomor": 1, 
+    "id": 1, 
     "makanan": "Burger"
     },
     {
-    "nomor": 2, 
+    "id": 2, 
     "makanan": "Pizza"
     },
     {
-    "nomor": 3, 
+    "id": 3, 
     "makanan": "Seblak"
     }
 ]
