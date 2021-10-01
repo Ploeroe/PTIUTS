@@ -1,6 +1,34 @@
 var count = 2;
 var nomor = 0;
         function onDocumentFinish(){
+            const tabelmakanan = $(".tabelmakanan") 
+            var menu;
+            var output;
+
+            const renderPosts = (posts) => {
+                posts.forEach((post,index)=>{
+                    output += 
+                      `<tr>
+                        <td>${index+1}</td>
+                        <td>${post.makanan}</td>
+                        <td><button onClick="productEdit(this)" class="editbutton">EDIT</button> || <button onClick="productDelete(this)" class="deletebutton">DELETE</button></td>
+                      </tr>`
+                    ;
+                });
+                $(".tabelmakanan").append(output);
+
+                // datalokal(post);
+            }
+
+            fetch("menu.json")
+                .then(response => response.json())
+                .then(data => {
+                    menu = data
+                    renderPosts(data)
+                    console.log(output)
+                })
+            
+
             document.getElementById('formSubmit').onsubmit = function(form){
                 form.preventDefault();
                 let item = {
@@ -14,6 +42,8 @@ var nomor = 0;
                         return false;
                     },
                     addToTable: function(){
+                        tabelmakanan.empty();
+
                         const tbody = document.getElementById('tableItem').querySelector('tbody');
                         const newRow = document.createElement('tr');
                         const nomorCol = document.createElement("td");
@@ -30,7 +60,9 @@ var nomor = 0;
                         newRow.appendChild(nomorCol);
                         newRow.appendChild(makananCol);
                         newRow.appendChild(editCol);
-                        tbody.appendChild(newRow);
+                        menu.push({makanan:this.makanan})
+                        renderPosts(menu)
+                        // tbody.appendChild(newRow);
                         // console.log(nomorCol);
                         // console.log(makananCol);
 
