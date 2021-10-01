@@ -4,6 +4,12 @@ var menu;
 const renderPosts = (posts) => {
     var output = "";
     $(".tabelmakanan tr").remove()
+
+    // set data ke local storage
+    let myObj_serialized = JSON.stringify(posts);
+    localStorage.setItem("myObj", myObj_serialized);
+    console.log(localStorage);
+
     posts.forEach((post,index)=>{
         output += 
           `<tr>
@@ -111,9 +117,31 @@ const renderPosts = (posts) => {
         }
 
         function randomize(){
-            var randomItem =
-            menu[Math.floor(Math.random()*menu.length)];
-            console.log(menu)
+            let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
+
+            var randomItem1 =
+            myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
+            console.log(myObj_deserialized)
+            var randomItem2 =
+            myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
+            console.log(myObj_deserialized)
+            while (randomItem1 == randomItem2 || randomItem1 == randomItem3 || randomItem2 == randomItem3){
+                var randomItem2 =
+                myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
+                console.log(myObj_deserialized)
+            }
+            var randomItem3 =
+            myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
+            console.log(myObj_deserialized)
+            while (randomItem1 == randomItem2 || randomItem1 == randomItem3 || randomItem2 == randomItem3){
+                var randomItem3 =
+                myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
+                console.log(myObj_deserialized)
+            }
             // let randomItembr = JSON.parse(randomItem);
-            document.getElementById("breakfast").innerHTML = "Breakfast : " + randomItem;
+            document.getElementById("breakfast").innerHTML = "Breakfast : " + randomItem1.makanan;
+            document.getElementById("lunch").innerHTML = "Lunch : " + randomItem2.makanan;
+            document.getElementById("dinner").innerHTML = "Dinner : " + randomItem3.makanan;
+
+
         }
