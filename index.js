@@ -109,3 +109,11 @@ const renderPosts = (posts) => {
                 // document.getElementById("tableItem").deleteRow(i);
             } 
         }
+
+        function randomize(){
+            var randomItem =
+            menu[Math.floor(Math.random()*menu.length)];
+            console.log(menu)
+            // let randomItembr = JSON.parse(randomItem);
+            document.getElementById("breakfast").innerHTML = "Breakfast : " + randomItem;
+        }
