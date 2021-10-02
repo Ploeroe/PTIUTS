@@ -8,7 +8,7 @@ const renderPosts = (posts) => {
     // set data ke local storage
     let myObj_serialized = JSON.stringify(posts);
     localStorage.setItem("myObj", myObj_serialized);
-    console.log(localStorage);
+    // console.log(localStorage);
 
     posts.forEach((post,index)=>{
         output += 
@@ -106,11 +106,16 @@ const renderPosts = (posts) => {
         function productEdit(r){
             if(confirm('Edit data ini ?')){
                 var updatemakanan = window.prompt("Nama makanan baru ?");
+                console.log(updatemakanan)
+                if(updatemakanan == "" || updatemakanan == null){
+                    alert("Tolong Mengisi Data Dengan Benar!")
+                } else {
                 var i = $(r).data().id
                 var itemindex = menu.findIndex(item => item.id === i)
                 menu[itemindex].makanan = updatemakanan
                 renderPosts(menu) 
-                console.log(itemindex)
+                // console.log(itemindex)
+                }
                 // var i = r.parentNode.parentNode.rowIndex;
                 // document.getElementById("tableItem").deleteRow(i);
             } 
