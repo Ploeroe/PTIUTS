@@ -144,9 +144,9 @@ const renderPosts = (posts) => {
                 console.log(myObj_deserialized)
             }
             // let randomItembr = JSON.parse(randomItem);
-            document.getElementById("breakfast").innerHTML = "Breakfast    : " + randomItem1.makanan;
-            document.getElementById("lunch").innerHTML = "Lunch        : " + randomItem2.makanan;
-            document.getElementById("dinner").innerHTML = "Dinner       : " + randomItem3.makanan;
+            document.getElementById("breakfast").innerHTML = "Breakfast : " + randomItem1.makanan;
+            document.getElementById("lunch").innerHTML = "Lunch : " + randomItem2.makanan;
+            document.getElementById("dinner").innerHTML = "Dinner : " + randomItem3.makanan;
 
 
         }
