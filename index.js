@@ -20,7 +20,6 @@ const renderPosts = (posts) => {
         ;
     });
     $(".tabelmakanan").append(output);
-
     // datalokal(post);
 }
 
@@ -33,7 +32,7 @@ const renderPosts = (posts) => {
                 .then(data => {
                     menu = data
                     renderPosts(data)
-                    console.log(output)
+                    // console.log(output)
                 })
             
 
@@ -67,6 +66,7 @@ const renderPosts = (posts) => {
                         newRow.appendChild(makananCol);
                         newRow.appendChild(editCol);
                         menu.push({id:menu.length+1,makanan:this.makanan})
+                        swal("Sudah Siap!","Makanan yang anda input sudah ditambahkan","success");
                         renderPosts(menu)
                         // tbody.appendChild(newRow);
                         // console.log(nomorCol);
@@ -88,65 +88,138 @@ const renderPosts = (posts) => {
                     item.addToTable();
                 }
                 else{
-                    alert('All fields must not empty');
+                    swal("ERROR!",'TIDAK BOLEH KOSONG!',"error");
                 }
             }
         }
 
         function productDelete(r){
-            if(confirm('Hapus data ini ?')){
-                var i = $(r).data().id
-                menu = menu.filter(item => item.id !== i)
-                renderPosts(menu)
-                console.log($(r).data().id)
-                
-            } 
+
+            swal({
+                title: "Apakah anda yakin?",
+                text: "Setelah dihapus, anda tidak dapat mendapatkan data ini kembali!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                    var i = $(r).data().id
+                    menu = menu.filter(item => item.id !== i)
+                    renderPosts(menu)
+                  swal("Berhasil!","Penghapusan data sukses!","success", {
+                    icon: "success",
+                  });
+                } else {
+                  swal("OKE!","Penghapusan data dibatalkan!","info");
+                }
+              });
         }
 
         function productEdit(r){
-            if(confirm('Edit data ini ?')){
-                var updatemakanan = window.prompt("Nama makanan baru ?");
-                console.log(updatemakanan)
+            swal({
+                title: "Edit data ini ?",
+                text: "Anda akan mengubah data!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willUpdate) => {
+                if (willUpdate) {
+
+                    swal("Write something here:", {
+                    content: "input",
+                    })
+                    .then((value) => {
+                        updatemakanan = value
+                    updates(updatemakanan);
+                    // var updatemakanan = window.prompt("Nama makanan baru ?");
+                    // console.log(updatemakanan)
+                });
+                
+                function updates(updatemakanan){
                 if(updatemakanan == "" || updatemakanan == null){
-                    alert("Tolong Mengisi Data Dengan Benar!")
+                    swal("ERROR","Tolong Isi Dengan Benar!","error")
                 } else {
                 var i = $(r).data().id
                 var itemindex = menu.findIndex(item => item.id === i)
                 menu[itemindex].makanan = updatemakanan
-                renderPosts(menu) 
+                renderPosts(menu)
                 // console.log(itemindex)
+                        }
                 }
-                // var i = r.parentNode.parentNode.rowIndex;
-                // document.getElementById("tableItem").deleteRow(i);
-            } 
+
+                  swal("Berhasil!","Pengeditan data sukses!","success", {
+                    icon: "success",
+                  });
+                } else {
+                  swal("OKE!","Pengeditan data dibatalkan!","info");
+                }
+              });
+
+
+
+
+            // if(confirm('Edit data ini ?')){
+            //     var updatemakanan = window.prompt("Nama makanan baru ?");
+            //     // console.log(updatemakanan)
+            //     if(updatemakanan == "" || updatemakanan == null){
+            //         swal("ERROR","Tolong Mengisi Data Dengan Benar!","error")
+            //     } else {
+            //     var i = $(r).data().id
+            //     var itemindex = menu.findIndex(item => item.id === i)
+            //     menu[itemindex].makanan = updatemakanan
+            //     renderPosts(menu) 
+            //     // console.log(itemindex)
+            //     }
+            //     // var i = r.parentNode.parentNode.rowIndex;
+            //     // document.getElementById("tableItem").deleteRow(i);
+            // } 
+        }
+
+        function randomizecounter(data){
+            let counter = 0;
+            data.forEach(post=>{
+                if(post.makanan != null){
+                    counter += 1;
+                }
+                ;
+            });
+            console.log(counter);
+            return counter;
         }
 
         function randomize(){
             let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
-
-            var randomItem1 =
-            myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
-            console.log(myObj_deserialized)
-            var randomItem2 =
-            myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
-            console.log(myObj_deserialized)
-            while (randomItem1 == randomItem2 || randomItem1 == randomItem3 || randomItem2 == randomItem3){
+            
+            if(randomizecounter(myObj_deserialized)>=3){
+                var randomItem1 =
+                myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
+                // console.log(myObj_deserialized)
                 var randomItem2 =
                 myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
-                console.log(myObj_deserialized)
-            }
-            var randomItem3 =
-            myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
-            console.log(myObj_deserialized)
-            while (randomItem1 == randomItem2 || randomItem1 == randomItem3 || randomItem2 == randomItem3){
+                // console.log(myObj_deserialized)
+                while (randomItem1 == randomItem2 || randomItem1 == randomItem3 || randomItem2 == randomItem3){
+                    var randomItem2 =
+                    myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
+                    // console.log(myObj_deserialized)
+                }
                 var randomItem3 =
                 myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
-                console.log(myObj_deserialized)
+                // console.log(myObj_deserialized)
+                while (randomItem1 == randomItem2 || randomItem1 == randomItem3 || randomItem2 == randomItem3){
+                    var randomItem3 =
+                    myObj_deserialized[Math.floor(Math.random()*myObj_deserialized.length)];
+                    // console.log(myObj_deserialized)
+                }
+                // let randomItembr = JSON.parse(randomItem);
+                document.getElementById("breakfast").innerHTML = "Breakfast : " + randomItem1.makanan;
+                document.getElementById("lunch").innerHTML = "Lunch : " + randomItem2.makanan;
+                document.getElementById("dinner").innerHTML = "Dinner : " + randomItem3.makanan;
+            } else {
+                swal("ERROR","Jumlah makanan anda belum cukup untuk menggunakan fitur ini!","error");
             }
-            // let randomItembr = JSON.parse(randomItem);
-            document.getElementById("breakfast").innerHTML = "Breakfast : " + randomItem1.makanan;
-            document.getElementById("lunch").innerHTML = "Lunch : " + randomItem2.makanan;
-            document.getElementById("dinner").innerHTML = "Dinner : " + randomItem3.makanan;
-
 
         }
+
+        
